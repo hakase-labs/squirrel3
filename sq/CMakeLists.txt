@@ -1,0 +1,19 @@
+SET( INCLUDE_DIRS
+    ${CMAKE_CURRENT_LIST_DIR}/../include
+    ${CMAKE_CURRENT_LIST_DIR}
+)
+INCLUDE_DIRECTORIES( ${INCLUDE_DIRS} )
+
+SET( SOURCE_FILES
+    sq.c
+)
+
+ADD_EXECUTABLE( sq
+    ${INCLUDE_FILES}
+    ${SOURCE_FILES}
+)
+
+TARGET_LINK_LIBRARIES( sq squirrel sqstdlib )
+
+# Export the include directory.
+SET( SQ_INCLUDE_DIRS ${INCLUDE_DIRS} PARENT_SCOPE )
