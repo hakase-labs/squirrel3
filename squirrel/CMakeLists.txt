@@ -1,10 +1,12 @@
 SET( INCLUDE_DIRS
-    ${CMAKE_CURRENT_LIST_DIR}/../include
-    ${CMAKE_CURRENT_LIST_DIR}
+    ${PROJECT_SOURCE_DIR}/include
 )
+
+SET( CMAKE_INCLUDE_CURRENT_DIR ON )
+
 INCLUDE_DIRECTORIES( ${INCLUDE_DIRS} )
 
-SET( SOURCE_FILES
+SET( SQUIRREL_SOURCE_FILES
     sqapi.cpp
     sqbaselib.cpp
     sqfuncstate.cpp
@@ -21,8 +23,7 @@ SET( SOURCE_FILES
 
 ADD_LIBRARY( squirrel
     STATIC
-    ${INCLUDE_FILES}
-    ${SOURCE_FILES}
+    ${SQUIRREL_SOURCE_FILES}
 )
 
 # Export the include directory.
