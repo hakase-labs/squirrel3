@@ -15,6 +15,14 @@ SET( SOURCE_FILES
     sqstdrex.cpp
 )
 
+IF( CMAKE_COMPILER_IS_GNUCXX )
+    IF( SQUIRREL_BUILD_64BIT_LIB )
+        SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -m64 -D_SQ64 -fno-exceptions -fno-rtti -Wall -fno-strict-aliasing" )
+    ELSE()
+        SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -m32 -fno-exceptions -fno-rtti -Wall -fno-strict-aliasing" )
+    ENDIF( SQUIRREL_BUILD_64BIT_LIB )
+ENDIF()
+
 ADD_LIBRARY( sqstdlib
     STATIC
     ${INCLUDE_FILES}

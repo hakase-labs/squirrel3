@@ -8,6 +8,20 @@ SET( SOURCE_FILES
     sq.c
 )
 
+SET_SOURCE_FILES_PROPERTIES( sq.c PROPERTIES LANGUAGE CXX )
+
+IF( CMAKE_COMPILER_IS_GNUCXX )
+    IF( SQUIRREL_BUILD_64BIT_LIB )
+        MESSAGE( "Building sq executasble as 64-bit" )
+        SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -s -m64 -fno-exceptions -fno-rtti -D_SQ64" )
+        SET( CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -m64" )
+    ELSE()
+        MESSAGE( "Building sq executasble as 32-bit" )
+        SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -s -m32 -fno-exceptions -fno-rtti" )
+        SET( CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -m32" )
+    ENDIF( SQUIRREL_BUILD_64BIT_LIB )
+ENDIF()
+
 ADD_EXECUTABLE( sq
     ${INCLUDE_FILES}
     ${SOURCE_FILES}
