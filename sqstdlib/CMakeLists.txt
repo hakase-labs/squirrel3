@@ -1,7 +1,9 @@
 SET( INCLUDE_DIRS
-    ${CMAKE_CURRENT_LIST_DIR}/../include
-    ${CMAKE_CURRENT_LIST_DIR}
+    ${PROJECT_SOURCE_DIR}/include
 )
+
+SET( CMAKE_INCLUDE_CURRENT_DIR ON )
+
 INCLUDE_DIRECTORIES( ${INCLUDE_DIRS} )
 
 SET( SOURCE_FILES
@@ -14,14 +16,6 @@ SET( SOURCE_FILES
     sqstdaux.cpp
     sqstdrex.cpp
 )
-
-IF( CMAKE_COMPILER_IS_GNUCXX )
-    IF( SQUIRREL_BUILD_64BIT_LIB )
-        SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -m64 -D_SQ64 -fno-exceptions -fno-rtti -Wall -fno-strict-aliasing" )
-    ELSE()
-        SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -m32 -fno-exceptions -fno-rtti -Wall -fno-strict-aliasing" )
-    ENDIF( SQUIRREL_BUILD_64BIT_LIB )
-ENDIF()
 
 ADD_LIBRARY( sqstdlib
     STATIC
