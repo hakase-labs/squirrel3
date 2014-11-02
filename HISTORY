@@ -1,3 +1,7 @@
+***version 3.0.6 stable***
+-fixed compiler bug that can cause memory corruption, the bug was introduced in 3.0.5(thx Alex95)
+
+***2014-03-22		   ***
 ***version 3.0.5 stable***
 -fixed crash in compiler when trying to write 'base'
 -fixed bug in gc
