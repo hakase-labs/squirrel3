@@ -1,7 +1,7 @@
 squirrel3
 =========
 
-The Squirrel programming language, version 3.0.4. This repository is made available with the author's permission.
+The Squirrel programming language, version 3.0.5. This repository is made available with the author's permission.
 
 ## Overview ##
 
