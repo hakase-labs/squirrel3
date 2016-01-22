@@ -5,12 +5,6 @@
 #include <setjmp.h>
 #include <sqstdstring.h>
 
-#ifdef _UINCODE
-#define scisprint iswprint
-#else
-#define scisprint isprint
-#endif
-
 #ifdef _DEBUG
 #include <stdio.h>
 

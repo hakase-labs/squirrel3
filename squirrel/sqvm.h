@@ -164,11 +164,12 @@ public:
 
 	ExceptionsTraps _etraps;
 	CallInfo *ci;
-	void *_foreignptr;
+	SQUserPointer _foreignptr;
 	//VMs sharing the same state
 	SQSharedState *_sharedstate;
 	SQInteger _nnativecalls;
 	SQInteger _nmetamethodscall;
+	SQRELEASEHOOK _releasehook;
 	//suspend infos
 	SQBool _suspended;
 	SQBool _suspended_root;
