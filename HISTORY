@@ -1,11 +1,30 @@
-***version 3.0.6 stable***
--fixed compiler bug that can cause memory corruption, the bug was introduced in 3.0.5(thx Alex95)
+***version 3.1 RC 1***
+-added new header sqconfig.h for all optional type declarations(unicode, 64bits etc..)
+-added sq_setsharedforeignptr sq_getsharedforeignptr
+-added sq_setsharedreleasehook sq_getsharedreleasehook
+-added escape() in sqstd string library
+-added __LINE__ and __FILE__ (thx mingodad)
+-widechar support on gcc builds
+-now boolean can be used in constants
+-reduced dependencies on C runtime library
+-newthread and sq_newthread() no longer reinitialize the root table on friend VMs(thx Lucas Cardellini)
+-exceptions in the _inherited metamethod are propagated(thx Lucas Cardellini)
+-'in' operator performance improvement(thx unagipai and mingodad)
+-fixes crash in compiler when trying to write 'base'
+-fixed bug in switch statement when using locals as case values (thx mingodad)
+-fixed bug in print()(thx Lucas Cardellini)
 
-***2014-03-22		   ***
-***version 3.0.5 stable***
--fixed crash in compiler when trying to write 'base'
--fixed bug in gc
--fixed few bugs in the compiler
+***2013-08-30		   ***
+***version 3.1 beta 1***
+-added new scoping rule(root attached to closures)
+-added closure.setroot() closure.getroot()
+-added sq_setclosureroot() and sq_getclosureroot()
+-added sq_setvmreleasehook() and sq_getvmreleasehook()
+-added documentaion for sq_getbase()
+-now string.tointeger() accepts an optional parameter 'base'
+-now format accepts zeroes in the format string (thx mingodad)
+-fixed bug in sqstd_createfile() (thx mingodad)
+-minor buxfixes
 
 ***2012-11-10		   ***
 ***version 3.0.4 stable***
@@ -16,6 +35,12 @@
 -minor bugfixes
 
 ***2012-06-19		   ***
+***version 3.1.0 alpha 1***
+-changed in and instanceof operator precendence
+-root object in closures
+-added closure.setroot closure.getroot
+-added sq_setclosureroot and sq_getclosureroot
+
 ***version 3.0.3 stable***
 -improved error messages for _cmp(when a non integer value is returned) (thx Yexo)
 -added class.newmember() built in method (thx Nam)

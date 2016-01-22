@@ -24,7 +24,6 @@
 *.vssscc
 *_i.c
 *_p.c
-*.dsw
 *.ncb
 *.suo
 *.tlb
